@@ -3,11 +3,21 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import client from './apolloClient';
+import { ApolloProvider } from '@apollo/client';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
+
+// Create the root for React 18
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// Use root.render for rendering the app
 root.render(
   <React.StrictMode>
-    <App />
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
   </React.StrictMode>
 );
 
